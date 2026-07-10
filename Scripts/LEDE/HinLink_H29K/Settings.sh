@@ -72,8 +72,8 @@ sed -i '$a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sy
 #    echo -e "\e[41m当前写入的编译时间:\e[0m \e[33m$(grep 'OPENWRT_RELEASE' package/base-files/files/usr/lib/os-release)\e[0m"
 # fi
 
-sed -i "s|DISTRIB_DESCRIPTION=.*|DISTRIB_DESCRIPTION=\"Bl4nc7 OS Phoenix$(TZ=UTC-8 date +'%y.%m.%d') (By @Bl4nc7 build $(TZ=UTC-8 date '+%Y-%m-%d %H:%M'))\"|g" package/base-files/files/etc/openwrt_release
-sed -i "s|OPENWRT_RELEASE=.*|OPENWRT_RELEASE=\"Bl4nc7 OS Phoenix$(TZ=UTC-8 date +'%y.%m.%d') (By @Bl4nc7 build $(TZ=UTC-8 date '+%Y-%m-%d %H:%M'))\"|g" package/base-files/files/usr/lib/os-release
+sed -i "s|DISTRIB_DESCRIPTION=.*|DISTRIB_DESCRIPTION=\"H29KLEDE-Bl4nc7OS (LEDE R26) Build $(TZ=UTC-8 date '+%Y-%m-%d %H:%M')\"|g" package/base-files/files/etc/openwrt_release
+sed -i "s|OPENWRT_RELEASE=.*|OPENWRT_RELEASE=\"H29KLEDE-Bl4nc7OS (LEDE R26) Build $(TZ=UTC-8 date '+%Y-%m-%d %H:%M')\"|g" package/base-files/files/usr/lib/os-release
 
 
 # 固件更新地址
