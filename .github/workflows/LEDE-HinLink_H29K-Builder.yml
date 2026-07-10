@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Bl4nc7OS-Phoenix-Builder
+name: H29KLEDE-Bl4nc7OS Builder
 
 on:
   repository_dispatch:
@@ -166,14 +166,15 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         # 生成版本标签
-        echo "release_tag=Bl4nc7OS-Phoenix-$(date +"%Y.%m.%d-%H%M%S")" >> $GITHUB_OUTPUT
+        echo "release_tag=H29KLEDE-Bl4nc7OS-$(date +"%Y.%m.%d-%H%M%S")" >> $GITHUB_OUTPUT
         
         # 生成发布说明
         cat <<EOF > release.txt
-        🚀 Lede 自动构建结果
+        🚀 H29KLEDE-Bl4nc7OS Build
         
         📅 编译时间: $(date +"%Y-%m-%d %H:%M:%S %Z")
-        💻 设备型号: HinLink - H29K
+        💻 设备型号: HinLink H29K Board 1.3
+              固件: H29KLEDE-Bl4nc7OS
         
         🔗 源码仓库: $REPO_URL
         🌱 代码分支: $REPO_BRANCH
