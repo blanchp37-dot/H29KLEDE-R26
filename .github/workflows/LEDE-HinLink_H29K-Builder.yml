@@ -92,7 +92,17 @@ jobs:
       run: cd lede && ./scripts/feeds update -a
 
     - name: 安装拉取源
-      run: cd lede && ./scripts/feeds install -a
+      run: | 
+        cd lede
+        ./scripts/feeds install -a
+        echo "===== Checking packages ====="
+
+        grep -R "Package: luci-app-argon-config" feeds || true
+        grep -R "Package: luci-app-adguardhome" feeds || true
+        grep -R "Package: filebrowser" feeds || true
+        grep -R "Package: luci-app-openvpn" feeds || true
+
+        echo "===== Done ====="
 
     - name: 加载自定义配置
       run: |
