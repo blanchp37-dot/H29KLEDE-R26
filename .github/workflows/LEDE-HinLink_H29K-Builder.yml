@@ -176,6 +176,10 @@ jobs:
         echo "===== BACKPORT ====="
         grep -i backport .config || true
 
+        echo "===== DRIVER_11AC ====="
+        grep DRIVER_11AC .config || true
+        grep DRIVER_11 .config || true
+
         echo "===== Package exists ====="
         find package -iname "*rtw88*"
 
